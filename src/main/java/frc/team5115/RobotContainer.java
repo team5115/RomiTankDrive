@@ -1,16 +1,18 @@
 public class RobotContainer {
     private final int number;
+    private final Drive drive;
     public RobotContainer(){
         switch (Constants.currentMode) {
             case REAL:
-                number = 5;
+                drive = new Drive(new DriveIORomi());
                 break;
             case SIM:
-                number 20;
+                drive = new Drive(new DriveIO(){});
                 break;
             default:
-                number = 10;
+                drive = new Drive(new DriveIO(){});
                 break;
         }
+        drive.setDefaultCommand(drive.drive());
     }
 }

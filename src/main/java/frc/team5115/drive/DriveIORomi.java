@@ -13,7 +13,8 @@ public class DriveIORomi implements DriveIO {
     private final Encoder m_leftEncoder = new Encoder(4, 5);
     private final Encoder m_rightEncoder = new Encoder(6, 7);
     public DriveIORomi(){
-
+        m_rightMotor.setInverted(true);
+        m_leftMotor.setInverted(false);
     }
     @override
     public void updateInputs (DriveIOInputs inputs) {
